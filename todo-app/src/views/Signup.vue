@@ -61,29 +61,40 @@ export default {
     }
   },
   methods: {
-    async registerUser() {
-      try {
-        if (this.password !== this.password_confirmation) {
-          alert('Passwords do not match.');
-          return;
-        }
-        
-        const payload = { 
-          name: this.name, 
-          email: this.email,
-          password: this.password
-        };
+  async registerUser() {
+    const startTime = performance.now(); // Start time
 
-        const response = await axios.post('http://localhost:8000/api/signup', payload);
-        alert('Registration successful!');
-         this.$router.push('/login');
-
-      } catch (err) {
-        console.error('Registration failed', err);
-        alert('Failed to register user.');
+    try {
+      if (this.password !== this.password_confirmation) {
+        alert('Passwords do not match.');
+        return;
       }
+
+      const payload = { 
+        name: this.name, 
+        email: this.email,
+        password: this.password
+      };
+
+      const response = await axios.post('http://localhost:8000/api/signup', payload);
+
+      const endTime = performance.now(); // End time
+      const timeTaken = endTime - startTime;
+      console.log(`Registration process took ${timeTaken.toFixed(2)} milliseconds.`);
+
+      alert('Registration successful!');
+      this.$router.push('/login');
+
+    } catch (err) {
+      const endTime = performance.now(); // Capture even in case of error
+      const timeTaken = endTime - startTime;
+      console.log(`Registration failed in ${timeTaken.toFixed(2)} milliseconds.`);
+
+      console.error('Registration failed', err);
+      alert('Failed to register user.');
     }
   }
+}
 }
 </script>
 

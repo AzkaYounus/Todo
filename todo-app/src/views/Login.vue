@@ -64,6 +64,12 @@ export default {
       localStorage.setItem('authToken', receivedToken);
       token.value = receivedToken; 
       this.$router.replace('/');
+      //it will remove token from storage after 2 minutes
+      setTimeout(function()
+      {localStorage.removeItem('authToken');
+        token.value = null;       
+      }, 120 * 1000);
+      
     } catch (error) {
       console.error('Login failed', error);
       this.error = error.response?.data?.errors || ['Login failed, please try again.'];
