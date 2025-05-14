@@ -199,7 +199,7 @@ export default {
           }
         };
 
-        const response = await axios.put(`https://ac44-110-39-134-182.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
+        const response = await axios.put(`https://4477-110-39-38-126.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
         this.newtask[index] = {
           ...response.data,
           isEditing: false,
@@ -229,7 +229,7 @@ export default {
           }
         };
 
-        await axios.delete(`https://ac44-110-39-134-182.ngrok-free.app/api/tasks/${task.id}`, headers);
+        await axios.delete(`https://4477-110-39-38-126.ngrok-free.app/api/tasks/${task.id}`, headers);
         this.newtask.splice(index, 1); 
       } catch (error) {
         console.error("Error deleting task:", error);
@@ -255,7 +255,7 @@ export default {
           }
         };
 
-        const response = await axios.put(`https://ac44-110-39-134-182.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
+        const response = await axios.put(`https://4477-110-39-38-126.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
         this.newtask[index] = {
           ...response.data,
           is_complete: newStatus
@@ -290,7 +290,7 @@ export default {
             }
           };
 
-          const response = await axios.put(`https://ac44-110-39-134-182.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
+          const response = await axios.put(`https://4477-110-39-38-126.ngrok-free.app/api/tasks/${task.id}`, payload, headers);
           this.newtask[this.selectedTaskIndex].date = response.data.date;
           this.newtask[this.selectedTaskIndex].updateCalender = false;
           this.selectedTaskIndex = null;
@@ -316,7 +316,7 @@ export default {
           }
         };
 
-        await axios.delete('https://ac44-110-39-134-182.ngrok-free.app/api/delete-all', headers);
+        await axios.delete('https://4477-110-39-38-126.ngrok-free.app/api/delete-all', headers);
         this.newtask = [];
       } catch (error) {
         console.error("Error deleting all tasks:", error);
@@ -335,7 +335,7 @@ async completeAll() {
       }
     };
 
-    const response = await axios.put('https://ac44-110-39-134-182.ngrok-free.app/api/complete-all', null, headers);
+    const response = await axios.put('https://4477-110-39-38-126.ngrok-free.app/api/complete-all', null, headers);
 
     const newStatus  = response.data.newStatus;  
 

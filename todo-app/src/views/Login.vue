@@ -56,7 +56,7 @@ export default {
   methods: {
   async login() {
     try {
-      const response = await axios.post('https://ac44-110-39-134-182.ngrok-free.app/api/login', {
+      const response = await axios.post('https://4477-110-39-38-126.ngrok-free.app/api/login', {
         email: this.email,
         password: this.password,
       });
