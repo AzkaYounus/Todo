@@ -6,7 +6,9 @@ import axios from 'axios';
 import './assets/main.css' 
 
 
-axios.defaults.baseURL = 'http://localhost/api'; // same base as APP_URL in Laravel
+//axios.defaults.baseURL = 'http://localhost/api'; // same base as APP_URL in Laravel
+
+axios.defaults.baseURL = 'https://ac44-110-39-134-182.ngrok-free.app/api';
 
 createApp(App)
   .use(router)
