@@ -76,7 +76,7 @@ export default {
         password: this.password
       };
 
-      const response = await axios.post('https://e106-110-39-38-126.ngrok-free.app/api/signup', payload);
+      const response = await axios.post('http://localhost:8000/api/signup', payload);
 
       const endTime = performance.now(); // End time
       const timeTaken = endTime - startTime;
