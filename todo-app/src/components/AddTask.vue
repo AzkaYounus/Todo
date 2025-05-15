@@ -117,7 +117,7 @@ export default {
     /*************** Loading all tasks  ***************/
   async fetchTasks() {
   try {
-    const response = await axios.get('https://ac44-110-39-134-182.ngrok-free.app/api/tasks', {
+    const response = await axios.get('https://e106-110-39-38-126.ngrok-free.app/api/tasks', {
       headers: {
         Authorization: `Bearer ${this.token}`
       }
